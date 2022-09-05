@@ -1,43 +1,38 @@
-$(function() {
+"use strict";
+
+$(function () {
   console.log('Hello Bootstrap5');
-});
-
-
-// --section 8 Swiper--//
+}); // --section 8 Swiper--//
 // Swiper
-const swiper = new Swiper('.swiper', {
+
+var swiper = new Swiper('.swiper', {
   // Optional parameters
   effect: 'fade',
   fadeEffect: {
     crossFade: true
   },
-  
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: '.swiper-pagination'
   },
-
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
+    prevEl: '.swiper-button-prev'
+  }
+}); // --section 4 Swiper--//
 
-
-// --section 4 Swiper--//
-
-const swiper2 = new Swiper('.swiper2', {
+var swiper2 = new Swiper('.swiper2', {
   effect: 'fade',
   fadeEffect: {
     crossFade: true
   },
   autoplay: {
-    delay: 1500,
+    delay: 1500
   },
   scrollbar: {
     el: ".swiper-scrollbar",
-    hide: true,
+    hide: true
   },
   speed: 1500,
   loop: true,
@@ -45,15 +40,12 @@ const swiper2 = new Swiper('.swiper2', {
   slidesPerView: 9,
   //多欄
   breakpoints: {
-      768: {
-          slidesPerView: 4
-      },
-      992: {
-          slidesPerView: 6
-      }
+    768: {
+      slidesPerView: 4
+    },
+    992: {
+      slidesPerView: 6
+    }
   }
-  
-
- });
-
-
+});
+//# sourceMappingURL=all.js.map

@@ -1,10 +1,57 @@
----
-title: Boostrap Index
-layout: ./app/layout.ejs
-engine: ejs
-current: index
----
-<!--Home Banner-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boostrap Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700&display=swap" rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/style/all.css">
+  </head>
+
+  <body>
+
+    <!--test-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-darkbg2 pb-sp sticky-top pt-0">
+      <div class="container-fluid d-flex justify-content-between px-8 bg-top">
+        <div class="nav-bar-start">
+        <a href="" class="navbar-brand"><img src="./assets/images/logo.svg" alt="Coding-Home-logo"></a>
+        <a href="" class="navbar-brand2 my-0"><img src="./assets/images/logo2.svg" alt="Coding-Home-logo-smaller"></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon border-0 text-primary material-icons icons-ham my-0">menu</span>
+      </button>
+        <div class="collapse navbar-collapse nav-bar-end d-flex justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-wh me-6" href="#">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-wh me-6" href="#">課程介紹</a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link text-wh d-flex" href="#"><span class="material-icons log-in">
+                account_circle
+                </span>登入</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Home Banner-->
 <div class="container-fluid">
   <div class="banner">
 <div class="container">
@@ -407,3 +454,14 @@ current: index
 
 </div>
 
+
+
+    <footer class="footer bg-darkbg4 py-4 mx-auto">
+      <p class="text-gr text-center">Coding Home © 2022 All Rights Reserved</p>
+    </footer>
+
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+
+</html>
