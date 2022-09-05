@@ -1,0 +1,9 @@
+@import "./reset";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "./helpers/variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+
+@import './layout/index.scss'
