@@ -14167,7 +14167,7 @@ ul li {
 .container-xxl {
   padding-left: 0px;
   padding-right: 0px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .container-fluid2 {
@@ -14176,10 +14176,12 @@ ul li {
 
 .container {
   max-width: 1296px;
+  width: 100%;
+  border: 1px solid #1c1c1c;
 }
 
-.navbar-brand {
-  width: 172px;
+.navbar-brand img {
+  width: 174px;
 }
 
 @media (min-width: 768px) {
@@ -14214,14 +14216,16 @@ ul li {
     width: 20px;
     height: auto;
     display: block;
-    top: -4px;
+    top: 16px;
     right: 12px;
+  }
+  .nav-item {
+    overflow-y: hidden;
   }
 }
 
 .banner {
   background-image: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/bg_home.jpg);
-  border: 1px solid yellowgreen;
   height: 100%;
   width: auto;
   background-repeat: no-repeat;
@@ -14246,12 +14250,6 @@ ul li {
   .banner-slogan {
     padding: 32px 48px;
     width: 98%;
-  }
-}
-
-@media (max-width: 992px) {
-  .nav-bar-start {
-    width: 100%;
   }
 }
 
@@ -14296,7 +14294,7 @@ ul li {
   padding: 0;
 }
 
-.nav-bar-start img {
+.navbar-brand {
   width: 174px;
 }
 
@@ -14320,8 +14318,7 @@ ul li {
 }
 
 .bigger-icon {
-  width: 43px;
-  height: auto;
+  font-size: 43px;
 }
 
 .fz-18 {
@@ -14330,12 +14327,19 @@ ul li {
 
 .card-r-12 {
   border-radius: 12px;
-  border-color: #2d2d2d;
+  background-color: #2d2d2d;
 }
 
 .card-r-12:hover {
-  border: 1px solid #62db54;
+  border-radius: 12px;
   background: #202020;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.card-r-12:hover .material-icons {
+  color: #62db54;
 }
 
 .card-r-12-wh {
@@ -14412,49 +14416,51 @@ ul li {
   background-position: center center;
   height: 615px;
   width: 100%;
+  position: relative;
+}
+
+.mask .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(28, 28, 28, 0.9);
+}
+
+.mask .filter:hover {
+  background: rgba(0, 0, 0, 0);
 }
 
 .mask span {
   height: 31px;
 }
 
-.mask::before {
-  content: '';
-  display: block;
+.mask h4, .mask .h4 {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1c1c1c;
-  opacity: .5;
-  z-index: 1;
+  z-index: 10;
 }
 
-.mask::before h4, .mask::before .h4 {
-  z-index: 2;
-  opacity: 0;
+.mask p {
+  margin-top: 60px;
 }
 
-.title-white::after {
+.title-white::before {
   content: '';
   display: block;
   background: #ffffff;
   width: 50px;
   height: 3px;
-  margin-left: 0px;
-  margin-top: 16px;
+  position: absolute;
+  top: 48px;
+  z-index: 10;
 }
 
-.title-white::after :hover {
+.mask:hover .title-white::before {
   background: #62db54;
 }
 
-.mask h4:hover, .mask .h4:hover {
-  opacity: 0;
-}
-
-.mask h4:hover .material-icons, .mask .h4:hover .material-icons {
+.mask:hover .material-icons {
   color: #62db54;
 }
 
@@ -14499,6 +14505,7 @@ ul li {
 
 .card-art {
   border: 1px solid yellowgreen;
+  position: relative;
 }
 
 .card-art img {
@@ -14522,38 +14529,47 @@ ul li {
   display: none;
   width: 32px;
   height: 32px;
+  background-color: #1c1c1c;
 }
 
 .squareRounded-topLeft {
   border-top: 2px solid #62DB54;
   border-left: 2px solid #62DB54;
   border-top-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .squareRounded-topRight {
   border-top: 2px solid #62DB54;
   border-right: 2px solid #62DB54;
   border-top-right-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .squareRounded-bottomLeft {
   border-bottom: 2px solid #62DB54;
   border-left: 2px solid #62DB54;
   border-bottom-left-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .squareRounded-bottomRight {
   border-bottom: 2px solid #62DB54;
   border-right: 2px solid #62DB54;
   border-bottom-right-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
-.card:hover .squareRounded {
+.card-art:hover .squareRounded {
   display: block;
-}
-
-.bdhover::after {
-  border: 1px solid #62db54;
 }
 
 .feedback {
@@ -14810,6 +14826,7 @@ ul li {
 .swiper2 {
   width: 100%;
   height: 75px;
+  overflow-x: hidden;
 }
 
 .swiper-slide2 button {
@@ -14868,6 +14885,22 @@ ul li {
 
 .price-list-txt:hover {
   color: #62db54;
+}
+
+.card-hover {
+  border: 1px solid #000;
+}
+
+.card-hover:hover {
+  border: 1px solid #62db54;
+}
+
+.giant-icon {
+  font-size: 104px;
+}
+
+.cta-right .btn-darkbg3 {
+  background-color: #202020;
 }
 
 /*# sourceMappingURL=all.css.map */
