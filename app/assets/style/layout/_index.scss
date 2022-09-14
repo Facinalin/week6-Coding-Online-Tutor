@@ -41,7 +41,7 @@ ul{
 .container-fluid{
   padding-left: 0px;
   padding-right: 0px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .container-fluid2{
@@ -52,10 +52,12 @@ ul{
 
 .container{
   max-width: 1296px;
+  width: 100%;
+  border: 1px solid $darkbg;
 }
 
-.navbar-brand{
-  width: 172px;
+.navbar-brand img{
+  width: 174px;
 
 }
 
@@ -93,8 +95,11 @@ ul{
     width: 20px;
     height: auto;
     display: block;
-    top: -4px;
+    top: 16px;
     right:12px;
+  }
+  .nav-item{
+    overflow-y: hidden;
   }
 }
 
@@ -102,7 +107,6 @@ ul{
 
 .banner{
   background-image:url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/bg_home.jpg);
-  border: 1px solid yellowgreen;
   height: 100%;
   width: auto;
   background-repeat: no-repeat;
@@ -131,11 +135,6 @@ ul{
 }
 
 
-@media (max-width:992px){
-  .nav-bar-start{
-    width:100%;
-  }
-}
 
 @media (max-width:992px){
   .nav-bar-end{
@@ -173,7 +172,7 @@ ul{
 }
 
 
-.nav-bar-start img{
+.navbar-brand{
   width: 174px;
 }
 
@@ -198,9 +197,8 @@ ul{
 }
 
 .bigger-icon{
-  width: 43px;
-  height: auto;
-}  // V //
+  font-size: 43px;
+}  
 
 .fz-18{
   font-size: 18px;
@@ -208,12 +206,17 @@ ul{
 
 .card-r-12{
   border-radius: 12px;
-  border-color: $darkbg2;
+  background-color: #2d2d2d;
   &:hover{
-    border: 1px solid #62db54;
+    border-radius: 12px;
     background: #202020;
-  }  
-}
+    transition: 0.2s;
+    .material-icons{
+     color: $primary;
+    }
+  }
+ 
+} 
 
 
 .card-r-12-wh{
@@ -283,46 +286,50 @@ ul{
     background-position: center center;
     height: 615px;
     width: 100%; 
+    position: relative;
+    .filter{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:  rgba(28, 28, 28, 0.9);
+      &:hover{
+      background:  rgba(0, 0, 0, 0);
+      }
+   }
   span{
     height:31px;
   }
-}
-
-.mask::before{
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $darkbg;
-  opacity: .5;
-  z-index: 1;
   h4{
-    z-index: 2;
-    opacity: 0;
+    position: absolute;
+    z-index:10;
+  }
+  p{
+    margin-top: 60px;
   }
 }
 
-.title-white::after{
+
+
+
+.title-white::before{
   content:'';
   display: block;
   background: $wh;
   width: 50px;
   height: 3px;
-  margin-left: 0px;
-  margin-top: 16px;
-  :hover{
-    background: $primary;
-  }
+  position: absolute;
+  top: 48px;
+  z-index: 10; 
 }
 
-.mask h4:hover{
-  opacity: 0;
-  .material-icons{
-   color: $primary;
-  }
+.mask:hover .title-white::before{
+  background: $primary;
+}
+
+.mask:hover .material-icons{
+  color: $primary;
 }
 
 @media (max-width:767px){
@@ -367,11 +374,12 @@ ul{
 
 .card-art{ 
   border: 1px solid yellowgreen;
-
+  position: relative;
   img{
   width: 352px;
   height: auto;
 }
+
 }
 @media (max-width:767px){
 .card-art img{
@@ -389,39 +397,46 @@ ul{
   display: none;
   width: 32px;
   height: 32px;
+  background-color: #1c1c1c;
   &-topLeft {
     border-top: 2px solid #62DB54;
     border-left: 2px solid #62DB54;
     border-top-left-radius: 10px;
+    position: absolute;
+    top:0;
+    left: 0;
   }
   &-topRight {
     border-top: 2px solid #62DB54;
     border-right: 2px solid #62DB54;
     border-top-right-radius: 10px;
+    position: absolute;
+    top:0;
+    right: 0;
   }
   &-bottomLeft {
     border-bottom: 2px solid #62DB54;
     border-left: 2px solid #62DB54;
     border-bottom-left-radius: 10px;
+    position: absolute;
+    bottom:0;
+    left: 0;
   }
   &-bottomRight {
     border-bottom: 2px solid #62DB54;
     border-right: 2px solid #62DB54;
     border-bottom-right-radius: 10px;
+    position: absolute;
+    bottom:0;
+    right: 0;
   }
 }
 
 
-.card:hover {
-  .squareRounded {
+.card-art:hover .squareRounded{
     display: block;
   }
-}
 
-
-.bdhover::after{
-  border: 1px solid $primary;
-}
 
 //ta//
 
@@ -624,6 +639,7 @@ ul{
 .swiper2{
   width: 100%;
   height: 75px;
+  overflow-x: hidden; 
 }
 
 .swiper-slide2 button{
@@ -680,4 +696,19 @@ ul{
 
 .price-list-txt:hover{
   color: $primary;
+}
+
+.card-hover{
+  border: 1px solid $bl;
+  &:hover{
+    border: 1px solid $primary;
+  }
+}
+
+.giant-icon{
+  font-size: 104px;
+}
+
+.cta-right .btn-darkbg3{
+  background-color: $darkbg3;
 }
